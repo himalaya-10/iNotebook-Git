@@ -28,7 +28,7 @@ const Notestate = (props) => {
         
         //add note
         const addNote=async({title,tag,description})=>{
-            console.log(title,tag,description)
+            // console.log(title,tag,description)
             //Api fetch
         const response = await fetch(`http://localhost:8000/api/createNotes`, {
             method: "POST",
@@ -39,7 +39,7 @@ const Notestate = (props) => {
             body: JSON.stringify({title,description,tag})
           });
           const json= await response.json();
-          console.log(json)
+        //   console.log(json)
 
 
 
@@ -75,7 +75,7 @@ const Notestate = (props) => {
 
         //edit Note
         const editNote=async(id,{title,description,tag})=>{
-                console.log(id,title,description,tag)
+                // console.log(id,title,description,tag)
             //fetch Api
                 // const response = 
 
@@ -150,7 +150,7 @@ const Notestate = (props) => {
                 body: JSON.stringify({email,password})
                 });
                 const json= await response.json();
-                console.log(json)
+                // console.log(json)
                 if(json.success){
                    localStorage.setItem('token',json.authtoken)
                     navigate("logged")
@@ -160,9 +160,47 @@ const Notestate = (props) => {
                 }
             
         }
+        //getuser//googlelogin
+        const getUser=async()=>{
+            try{
+              const response=await fetch(`${host}auth/login/success`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include",
+                });
+                const json= await response.json();
+                localStorage.setItem('token',json.authtoken)
+                // console.log(json.authtoken)
+                navigate("logged")
+                
+            }
+            catch(err){
+              console.log(err)
+            }
+          }
 
 
+        //googlelogin
 
+        
+        // const googlelogin=async(authtoken)=>{
+
+        //     //fetch Api
+        //         // const response = 
+
+                
+                
+        //         // if(json.success){
+        //            localStorage.setItem('token',authtoken)
+        //             navigate("logged")
+        //         // }
+        //         // else{
+        //         //     triggerAlert("XXXXXX Invalid Credentials XXXXXX")
+        //         // }
+            
+        // }
 
         let [msg,setmsg]=useState(null)
 
@@ -177,7 +215,7 @@ const Notestate = (props) => {
 
         }
     return(
-        <NoteContext.Provider value={{notes,setNotes,triggerAlert,addNote,deleteNote,editNote,fetchallNotes,signup,login}}>
+        <NoteContext.Provider value={{notes,setNotes,triggerAlert,addNote,deleteNote,editNote,fetchallNotes,signup,login,getUser}}>
 
             <Alert msg={msg} />
             { props.children }

@@ -4,6 +4,15 @@ export default function Home() {
   const context = useContext(noteContext)
   const {login} = context
   const [text,setText]=useState({email:"",password:""})
+  /////
+  const googleAuth=(e)=>{
+    // e.preventDefault()
+    // window.location.href = "http://localhost:8000/auth/google";
+    window.open("http://localhost:8000/auth/google/callback","_self");
+
+
+  }
+  /////
 
   const log=(e)=>{
     e.preventDefault()
@@ -32,6 +41,7 @@ export default function Home() {
   </div>
   <button type="submit" className="btn btn-dark" onClick={log}>Submit</button>
 </form>
+  <div className='container' style={{display:'grid',justifyContent:'center'}}><button className='google.btn' onClick={googleAuth}><img src="./glogo.png" alt="G" style={{height:'50px'}}/><span>Sign in with Google</span></button></div>
    
   
     </>

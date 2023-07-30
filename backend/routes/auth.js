@@ -14,8 +14,19 @@ const JWT_secretkey="Himalaya";//Secret Key or Private Key: To sign the JWT, you
 //createUser
 
 const fetchUser=require("../middleware/login")
-
-
+///////////////////////////////
+// const passport=require('passport')
+// router.get("/login/failed",(req,res)=>{
+//     res.status(404).json({error:true,msg:"Log in failed."})
+// }
+// )
+// router.get("/google/callback",
+//     passport.authenticate("google",{
+//         successRedirect:"http://localhost:3000/",
+//         failureRedirect: '/login/failed'
+//     })
+// )
+///////////////////////////////////
 
 router.post("/createUser",[
     //validator messages and condition of schema
@@ -107,6 +118,7 @@ router.post("/login",[
 router.post("/getuser",fetchUser,async(req,res)=>{//pass a middle ware to verify the user and fetch it id
     try{
         userId=req.user
+        console.log(userId)
         const user=await User.findById(userId).select("-password")
         res.send(user)
     }

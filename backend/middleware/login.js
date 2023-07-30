@@ -13,6 +13,7 @@ const fetchUser=(req,res,next)=>{
         // if it matches then put it data in req.user and export it
         const data = jwt.verify(token,JWT_secretkey);
         req.user=data.user;
+
         next();
     }
     catch(error){

@@ -11,9 +11,9 @@ import About from './components/About';
 import Sign from './components/Sign';
 import Notestate from './context/Notestate';
 import Notes from './components/Notes';
+import Enter from './components/Enter';
 
 function App() {
-
 
   return (
     <>
@@ -27,6 +27,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/sign' element={<Sign/>}/>
         <Route path='/logged' element={<Notes/>}/>
+        <Route path='/enter' element={<Enter/>}/>
       </Routes>
       </div>
     </Notestate>
