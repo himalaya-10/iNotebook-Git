@@ -5,8 +5,8 @@ const session = require('express-session');
 passport.use(
     new GoogleStrategy(
         {
-            clientID: "clientID",
-            clientSecret: "clientsecret",
+            clientID: "517741880459-ect17kps81cc09t23snp2ev2k80gfqjb.apps.googleusercontent.com",
+            clientSecret: "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",
             callbackURL: "http://localhost:8000/auth/google/callback",
             scope :["profile","email"]
         },

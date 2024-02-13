@@ -15,7 +15,7 @@ const About=()=> {
       {/* this is about in {a.state.name} in class {a.state.class} */}
 
       <h1 style={{textAlign:"center"}}>About iNotebook</h1>
-      <p style={{textAlign:"center"}}>iNotebook is your personalize cloud notebook which will always with you whereever you go. Access you Notebook everywhere!!  </p>
+      <p style={{textAlign:"center"}}>iNotebook is your personalised cloud notebook which will always be with you wherever you go. Access your Notebook anywhere!</p>
     </div>
   )
 }

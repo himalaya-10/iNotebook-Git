@@ -202,6 +202,10 @@ const Notestate = (props) => {
             
         // }
 
+        const Logout=()=>{
+            localStorage.removeItem('token')
+            navigate("/")
+        }
         let [msg,setmsg]=useState(null)
 
         
@@ -215,7 +219,7 @@ const Notestate = (props) => {
 
         }
     return(
-        <NoteContext.Provider value={{notes,setNotes,triggerAlert,addNote,deleteNote,editNote,fetchallNotes,signup,login,getUser}}>
+        <NoteContext.Provider value={{notes,setNotes,triggerAlert,addNote,deleteNote,editNote,fetchallNotes,signup,login,getUser,Logout}}>
 
             <Alert msg={msg} />
             { props.children }

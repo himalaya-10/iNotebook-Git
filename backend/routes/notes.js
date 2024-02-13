@@ -17,9 +17,6 @@ router.get("/getNotes",fetchUser,async(req,res)=>{
         res.status(400).send("Internal error occured");
     }
     
-    
-        
-        
 })
 
 

@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <>
     <div className='login m-5' style={{ textAlign: "center" }}>
-      <h1>Login To Your cloud Notebook</h1>
+      <h1>Login To Your iNotebook</h1>
       </div>
   <form>
   <div className="mb-3">
@@ -39,7 +39,7 @@ export default function Home() {
   </div>
   <div className="mb-3 form-check">
   </div>
-  <button type="submit" className="btn btn-dark" onClick={log}>Submit</button>
+  <button type="submit" className="btn btn-dark" onClick={log}>Sign In</button>
 </form>
   <div className='container' style={{display:'grid',justifyContent:'center'}}><button className='google.btn' onClick={googleAuth}><img src="./glogo.png" alt="G" style={{height:'50px'}}/><span>Sign in with Google</span></button></div>
    

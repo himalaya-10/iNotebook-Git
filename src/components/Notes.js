@@ -4,7 +4,7 @@ import NoteItems from './NoteItems'
 import noteContext from '../context/noteContext'
 export default function Notes() {
     const context = useContext(noteContext)
-    const { notes, addNote,triggerAlert,fetchallNotes} = context
+    const { notes, addNote,triggerAlert,fetchallNotes,Logout} = context
     //fetching all notes from db
     useEffect(()=>{
         fetchallNotes();
@@ -22,6 +22,11 @@ export default function Notes() {
         e.preventDefault()
         addNote(text);
         triggerAlert("Note added Successfully!!")
+    }
+
+    const onclickLogout=(e)=>{
+        Logout();
+        triggerAlert("Logged out Successfully!!")
     }
 
     return (
@@ -50,6 +55,9 @@ export default function Notes() {
                         return <NoteItems key={note._id} note={note} />
                     })
                 }
+            </div>
+            <div className='log' style={{display:'flex',float:' right'}}>
+                <button type="submit" className="btn btn-success m-2" onClick={onclickLogout}>Log Out</button>
             </div>
         </>
     )

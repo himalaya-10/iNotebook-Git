@@ -48,7 +48,7 @@ export default function Sign() {
   </div>
   <div className="mb-3 form-check">
   </div>
-  <button type="submit" className="btn btn-dark" onClick={sign}>Submit</button>
+  <button type="submit" className="btn btn-dark" onClick={sign}>Sign Up</button>
 </form>
 
    
